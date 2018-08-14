@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   constructor() {
-    this.addPost("david Bowie", "un excellent chanteur");
+    this.addPost("David Bowie", "un excellent chanteur");
     this.addPost("Wes Anderson","un excellent ralisateur");
-    this.addPost("J.R.R Martin", "un excellent crivain");
+    this.addPost("J.R.R. Martin", "un excellent crivain");
   };
 
   posts = [];
