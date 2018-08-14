@@ -1,0 +1,8 @@
+<li class="list-group-item" [ngClass]="{'list-group-item-success': postLike > 0, 'list-group-item-danger': postLike < 0}">
+      <h3>{{postName}}</h3>
+      <p>{{postDate | date: ' EEEE, MMMM d y'}}</p>
+      <p>{{postContent}}</p>
+      <button class="btn btn-success" (click)="postLike = postLike + 1"> +1 </button>
+      <button class="btn btn-danger" (click)="postLike = postLike - 1"> -1 </button>
+      {{postLike}}
+</li>
