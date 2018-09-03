@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,32 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+
+  title = 'Blog'
+
   constructor() {
-    this.addPost("David Bowie", "un excellent chanteur");
-    this.addPost("Wes Anderson","un excellent ralisateur");
-    this.addPost("J.R.R. Martin", "un excellent crivain");
-  };
-
-  posts = [];
- 
-  addPost(name, content) {
-    let post = new Post(name, content);
-    this.posts.push(post);
-  };
-}
-
-class Post {
-
-  name: string;
-  content: string;
-  like: number;
-  date: Date;
-
-  constructor(nameArg, contentArg) {
-    this.name = nameArg;
-    this.content = contentArg;
-    this.date = new Date();
-    this.like = 0;
-  }
+    var config = {
+      apiKey: "AIzaSyBgG6Kqz6ivttpNdCIZLRKN7tI0uBKorNQ",
+      authDomain: "blog-c237c.firebaseapp.com",
+      databaseURL: "https://blog-c237c.firebaseio.com",
+      projectId: "blog-c237c",
+      storageBucket: "blog-c237c.appspot.com",
+      messagingSenderId: "677672551206"
+    };
+    firebase.initializeApp(config);
+  } 
+  
 }

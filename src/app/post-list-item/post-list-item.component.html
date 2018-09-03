@@ -1,8 +1,9 @@
-<li class="list-group-item" [ngClass]="{'list-group-item-success': postLike > 0, 'list-group-item-danger': postLike < 0}">
-      <h3>{{postName}}</h3>
-      <p>{{postDate | date: ' EEEE, MMMM d y'}}</p>
-      <p>{{postContent}}</p>
-      <button class="btn btn-success" (click)="postLike = postLike + 1"> +1 </button>
-      <button class="btn btn-danger" (click)="postLike = postLike - 1"> -1 </button>
-      {{postLike}}
+<li class="list-group-item" [ngClass]="{'list-group-item-success': post.like > 0, 'list-group-item-danger': post.like < 0}">
+      <h3>{{post.name}}</h3>
+      <p>{{post.date | date: ' EEEE, MMMM d y'}}</p>
+      <p>{{post.content}}</p>
+      <button class="btn btn-success" (click)="onPostLike(true)"> +1 </button>
+      <button class="btn btn-danger" (click)="onPostLike(false)"> -1 </button>
+      <button class="pull-right btn btn-danger" (click)="onDeletePost()"> delete </button>
+      {{post.like}}
 </li>
