@@ -25,10 +25,10 @@ export class PostListComponent implements OnInit, OnDestroy{
     this.postsSuscription.unsubscribe();
   }
 
-  sortPosts(prop: string) {
+  sortPosts(asc: boolean, Att: string) {
     const sortedPosts = this.posts.sort(
-      (a, b) => a[prop] > b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1);
-    if (prop.charAt(0) === '-') { sortedPosts.reverse(); }
+      (a, b) => a[Att] > b[Att] ? 1 : a[Att] === b[Att] ? 0 : -1);
+    if (!asc) sortedPosts.reverse();
     return sortedPosts;
   }
 }
